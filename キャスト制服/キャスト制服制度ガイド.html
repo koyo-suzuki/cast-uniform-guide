@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャスト制服ガイド</title>
+<style>
+  :root{
+    --pink:#e8657f; --pink-soft:#fdeef1; --pink-mid:#f6c9d3;
+    --navy:#3a3550; --gray:#7a7488; --ivory:#fffaf7;
+    --gold:#c9a85c; --warn-bg:#fff4e8; --warn:#d97b2f;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--ivory);color:var(--navy);line-height:1.8;padding-bottom:96px}
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--pink-soft),#fff 70%);padding:48px 0 32px;text-align:center}
+  .hero .eyebrow{font-size:12px;letter-spacing:.2em;color:var(--pink);font-weight:700}
+  .hero h1{font-size:26px;margin:8px 0 12px;line-height:1.5}
+  .hero p{font-size:14px;color:var(--gray)}
+  .notice{background:var(--navy);color:#fff;border-radius:var(--radius);padding:14px 18px;margin-top:20px;font-size:13px;text-align:left}
+  .notice strong{color:#ffd9e2}
+
+  section{padding:36px 0}
+  h2{font-size:20px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  h2 .tag{font-size:11px;background:var(--pink);color:#fff;border-radius:999px;padding:2px 10px;font-weight:600;white-space:nowrap}
+  h2 .tag.gold{background:var(--gold)}
+  .lead{font-size:14px;color:var(--gray);margin-bottom:20px}
+
+  /* 目的別ナビ */
+  .nav-cards{display:grid;gap:14px}
+  .nav-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1.5px solid var(--pink-mid);border-radius:var(--radius);padding:20px;transition:transform .15s}
+  .nav-card:active{transform:scale(.98)}
+  .nav-card .q{font-size:15px;font-weight:700;margin-bottom:6px}
+  .nav-card .a{font-size:13px;color:var(--gray)}
+  .nav-card .go{display:inline-block;margin-top:10px;font-size:13px;color:var(--pink);font-weight:700}
+
+  /* cards & boxes */
+  .card{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(58,53,80,.06)}
+  .card h3{font-size:15px;margin-bottom:10px;color:var(--pink);border-left:4px solid var(--pink);padding-left:10px}
+  .card.gold h3{color:var(--gold);border-color:var(--gold)}
+  .card p,.card li{font-size:14px}
+  .card ul{padding-left:20px}
+  .card li{margin-bottom:6px}
+  .big-num{font-size:28px;font-weight:800;color:var(--pink)}
+  .big-num small{font-size:13px;font-weight:600;color:var(--navy)}
+  .note{font-size:12px;color:var(--gray);margin-top:6px}
+  .tbd{display:inline-block;font-size:11px;background:#eee9f2;color:#8a7fa8;border-radius:999px;padding:1px 8px;vertical-align:middle;font-weight:600}
+
+  .warn-box{background:var(--warn-bg);border:1.5px solid var(--warn);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px}
+  .warn-box .t{color:var(--warn);font-weight:800;font-size:14px;margin-bottom:6px}
+  .warn-box p{font-size:13px}
+
+  /* 占有権図解 */
+  .ownership{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+  .ownership div{background:var(--pink-soft);border-radius:12px;padding:14px;text-align:center}
+  .ownership .who{font-size:12px;color:var(--gray)}
+  .ownership .what{font-size:15px;font-weight:800;margin-top:2px}
+  .ownership .sub{font-size:11px;color:var(--gray);margin-top:2px}
+
+  /* tabs */
+  .tabs{display:flex;gap:8px;margin-bottom:14px}
+  .tab-btn{flex:1;padding:10px;border:1.5px solid var(--pink-mid);background:#fff;border-radius:12px;font-size:13px;font-weight:700;color:var(--gray);cursor:pointer}
+  .tab-btn.active{background:var(--pink);border-color:var(--pink);color:#fff}
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+  .cond{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--pink-mid);padding:10px 0;font-size:14px}
+  .cond:last-child{border-bottom:none}
+  .cond b{font-size:16px;color:var(--pink)}
+
+  /* steps */
+  .steps{counter-reset:step;list-style:none;padding:0}
+  .steps li{position:relative;padding:0 0 18px 44px;font-size:14px}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--pink);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .steps li:not(:last-child)::after{content:"";position:absolute;left:14px;top:32px;bottom:2px;width:2px;background:var(--pink-mid)}
+
+  /* accordion */
+  details{background:#fff;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 8px rgba(58,53,80,.05)}
+  summary{padding:14px 18px;font-size:14px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::after{content:"＋";color:var(--pink);font-weight:400}
+  details[open] summary::after{content:"−"}
+  details .body{padding:0 18px 16px;font-size:13px;color:#4d4862}
+  details .body ul{padding-left:18px}
+  details .body li{margin-bottom:6px}
+
+  /* footer CTA */
+  .cta-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--pink-mid);padding:12px 16px;display:flex;gap:10px;z-index:50}
+  .cta-bar a{flex:1;text-align:center;text-decoration:none;font-size:13px;font-weight:800;padding:13px 6px;border-radius:12px}
+  .cta-buy{background:var(--pink);color:#fff}
+  .cta-orig{background:#fff;color:var(--gold);border:1.5px solid var(--gold)}
+
+  .divider{border:none;border-top:1.5px solid var(--pink-mid);margin:0}
+  footer{padding:32px 0 24px;text-align:center;font-size:12px;color:var(--gray)}
+</style>
+</head>
+<body>
+
+<!-- ① ヒーロー -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">CAST UNIFORM GUIDE</div>
+    <h1>制服のルールが<br>新しくなりました</h1>
+    <p>あなたに合った制服の持ち方、見つけてね。</p>
+    <div class="notice">
+      <strong>大切なお知らせ：</strong>制服の<strong>貸し借りは全面禁止</strong>になりました。自分の制服は自分だけのもの。みんなが気持ちよく働けるように、守ってください。
+    </div>
+  </div>
+</div>
+
+<!-- ② 目的別ナビ -->
+<section>
+  <div class="wrap">
+    <h2>あなたはどっちのタイプ?</h2>
+    <p class="lead">2つの制度は目的がぜんぜん違うもの。自分の気持ちに近いほうを見てみてね。</p>
+    <div class="nav-cards">
+      <a class="nav-card" href="#senyou">
+        <div class="q">「自分だけが着る制服がいい」</div>
+        <div class="a">みんなで一緒に使う制服はちょっと苦手…という子へ。今ある制服を、あなた専用にできます。</div>
+        <span class="go">→ 専用買取を見る</span>
+      </a>
+      <a class="nav-card" href="#original">
+        <div class="q">「自分でデザインした制服を作りたい」</div>
+        <div class="a">自分の「好き」をかたちにしたい子へ。がんばりが条件をクリアしたら、世界に一着の制服を作ってもらえます。</div>
+        <span class="go">→ オリジナル制服を見る</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ③ 専用買取 -->
+<section id="senyou">
+  <div class="wrap">
+    <h2>専用買取 <span class="tag">買って自分専用に</span></h2>
+    <p class="lead">今ある制服を「自分専用」にできる制度です。買ったあとは、その制服を着るのはあなただけ。<span class="tbd">※正式な名前は決まり次第お知らせ</span></p>
+
+    <div class="card">
+      <h3>どういう制度?</h3>
+      <p>制服そのものは<strong>お店のもの</strong>のままですが、お金を払うことで<strong>「着られるのはあなただけ」</strong>になります。ほかの子に貸したり、借りたりはできません。</p>
+      <div class="ownership">
+        <div><div class="who">制服の持ち主</div><div class="what">お店</div></div>
+        <div><div class="who">着られるのは</div><div class="what">あなただけ</div></div>
+      </div>
+      <p class="note">「自分のものになる」ではなく「自分だけが使えるようになる」イメージです。</p>
+    </div>
+
+    <div class="card">
+      <h3>金額・支払い方法</h3>
+      <p><span class="big-num">12〜13<small>万円くらい</small></span> <span class="tbd">※金額は決まり次第お知らせ</span></p>
+      <ul>
+        <li>支払いは<strong>会社の口座にお振込み</strong></li>
+      </ul>
+    </div>
+
+    <div class="warn-box">
+      <div class="t">⚠ 申し込む前にチェック!</div>
+      <p>・できあがるまで<strong>3〜6ヶ月</strong>かかります<br>
+      ・申し込んだあとの<strong>キャンセル・返金はできません</strong></p>
+    </div>
+
+    <div class="card">
+      <h3>申し込みの流れ</h3>
+      <ol class="steps">
+        <li>どの制服が対象か確認する <span class="tbd">※対象は決まり次第お知らせ</span></li>
+        <li>申し込みフォームから申し込む <span class="tbd">※フォーム準備中</span></li>
+        <li>会社の口座にお振込み</li>
+        <li>できあがったらお渡し（3〜6ヶ月）</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ④ オリジナル制服 -->
+<section id="original">
+  <div class="wrap">
+    <h2>オリジナル制服 <span class="tag gold">がんばって作る</span></h2>
+    <p class="lead">世界に一着、自分がデザインした制服を作れる制度です。条件をクリアすると、<strong>10万円（税込）</strong>の予算で新しいデザインの制服を作ってもらえます（1年に1着まで）。</p>
+
+    <div class="card gold">
+      <h3>クリアする条件</h3>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="cast">キャスト</button>
+        <button class="tab-btn" data-tab="km">キャストマネージャー</button>
+      </div>
+      <div class="tab-panel active" id="tab-cast">
+        <div class="cond"><span>売上</span><b>月150万円</b></div>
+        <div class="cond"><span>期間</span><b>3ヶ月連続で達成</b></div>
+        <div class="cond"><span>出勤</span><b>この3ヶ月で30日以上</b></div>
+        <p class="note">※ブランドアンバサダーの子も同じ条件です ／ リクエスト出勤は出勤日数に数えません</p>
+      </div>
+      <div class="tab-panel" id="tab-km">
+        <div class="cond"><span>売上</span><b>月100万円</b></div>
+        <div class="cond"><span>期間</span><b>3ヶ月で3回達成</b></div>
+        <div class="cond"><span>店責</span><b>この期間に10日以上</b></div>
+        <p class="note">※あとから取り消しになった店責は数えません</p>
+      </div>
+      <p class="note">※売上は、サービス料や手数料を引いたあとの金額（売上小計）で数えます<br>※予算10万円のなかなら、ヘッドドレスなどのパーツ購入もOK<br>※長期休暇などで期間が途切れちゃいそうなときは、相談してください</p>
+    </div>
+
+    <div class="card gold">
+      <h3>権利がなくなってしまうケース</h3>
+      <p class="note" style="margin-bottom:10px">条件をクリアしても、こういう場合は作れなくなってしまうので気をつけてね。</p>
+      <details>
+        <summary>勤怠のこと</summary>
+        <div class="body"><ul><li>期間中に当欠3回、または遅刻5回以上</li></ul></div>
+      </details>
+      <details>
+        <summary>在籍のこと</summary>
+        <div class="body"><ul>
+          <li>達成したあと60日以内に、お店を辞めたり長期休暇に入ったりした場合</li>
+          <li>契約違反や、犯罪・会社に損害を与える行為があったと認められた場合</li>
+        </ul></div>
+      </details>
+      <details>
+        <summary>制作のこと</summary>
+        <div class="body"><ul><li>権利をもらったあと、期限までにデザインの希望やデザイナーさんからの質問に答えなかった場合</li></ul></div>
+      </details>
+      <details>
+        <summary>ルールのこと</summary>
+        <div class="body"><ul>
+          <li>イントラ「オリジナル制服申請」にあるルールを守らなかった場合</li>
+          <li>お客様への声かけやDMで、高額商品をあおるような案内をした場合（法律で禁止されています）</li>
+          <li>店責の指示にしたがわず、ほかの子の売上を取るなどのズルをした場合</li>
+        </ul></div>
+      </details>
+    </div>
+
+    <div class="card gold">
+      <h3>知っておいてほしいこと</h3>
+      <ul>
+        <li><strong>制服はだれのもの?</strong>　税金のルールの関係で、できあがってから2年間はお店のものになります。2年たったら、希望すれば相談のうえで自分のものにできます</li>
+        <li><strong>デザインの権利</strong>　デザインの権利（著作権）は会社にあります。お店のお仕事・公式の活動以外で勝手に使うことはできません</li>
+        <li><strong>お直しの費用</strong>　最初に作るとき以外のお直し（体型が変わったときの直しや、ふだん使いでの修理など）は自己負担です</li>
+      </ul>
+    </div>
+
+    <div class="card gold">
+      <h3>申請の流れ</h3>
+      <ol class="steps">
+        <li>お店のキャストマネージャーにOKをもらう</li>
+        <li>イントラ「オリジナル制服申請」から申請（チャレンジ期間が始まる<strong>7日前まで</strong>）</li>
+        <li>条件クリアしたら、デザイナーさんとデザインの打ち合わせ</li>
+        <li>制作してもらって、お渡し</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ⑤ 共通ルール -->
+<section>
+  <div class="wrap">
+    <h2>2つの制度に共通のルール</h2>
+    <div class="card">
+      <h3>貸し借りは禁止</h3>
+      <p>どちらの制服も、<strong>ほかの子との貸し借りはできません</strong>。トラブルを防ぐためなので、必ず守ってね。</p>
+    </div>
+    <div class="card">
+      <h3>保管のしかた</h3>
+      <ul>
+        <li>専用の<strong>袋・ロッカー</strong>でひとりずつ管理します</li>
+        <li>お洗濯・保管のルール <span class="tbd">※準備中・決まり次第お知らせ</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ⑥ FAQ -->
+<section>
+  <div class="wrap">
+    <h2>よくある質問</h2>
+    <details>
+      <summary>専用買取とオリジナル制服、両方できる?</summary>
+      <div class="body"><p>はい、どちらも利用できます。専用買取で好きな制服を自分専用にしながら、オリジナル制服にチャレンジすることもOKです。</p></div>
+    </details>
+    <details>
+      <summary>いま「専用制服」を持ってるんだけど、どうなる?</summary>
+      <div class="body"><p>新しいルールへの切り替え方法を準備中です。<span class="tbd">※決まり次第お知らせ</span></p></div>
+    </details>
+    <details>
+      <summary>お店を辞めたら制服はどうなる?</summary>
+      <div class="body"><p>オリジナル制服は、できあがってから2年間はお店のものなので、原則お渡しできません（2年たてば相談のうえで可能）。専用買取の場合は確認中です。<span class="tbd">※決まり次第お知らせ</span></p></div>
+    </details>
+    <details>
+      <summary>サイズが変わったら直してもらえる?</summary>
+      <div class="body"><p>直すこと自体はできますが、費用は自己負担になります。</p></div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    わからないことがあったら、お店のキャストマネージャーか運営に気軽に聞いてね。<br>
+    「※決まり次第お知らせ」の項目は、決まったらこのページを更新します。
+  </div>
+</footer>
+
+<!-- ⑦ 固定CTA -->
+<div class="cta-bar">
+  <a class="cta-buy" href="#senyou">専用買取を申し込む</a>
+  <a class="cta-orig" href="#original">オリジナル制服にチャレンジ</a>
+</div>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
