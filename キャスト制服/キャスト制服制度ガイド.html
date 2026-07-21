@@ -22,6 +22,8 @@
   .hero p{font-size:14px;color:var(--gray)}
   .notice{background:var(--navy);color:#fff;border-radius:var(--radius);padding:14px 18px;margin-top:20px;font-size:13px;text-align:left}
   .notice strong{color:#ffd9e2}
+  .meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:var(--gray)}
+  .meta span{background:#fff;border:1px solid var(--pink-mid);border-radius:999px;padding:4px 10px}
 
   section{padding:36px 0}
   h2{font-size:20px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
@@ -36,6 +38,13 @@
   .nav-card .q{font-size:15px;font-weight:700;margin-bottom:6px}
   .nav-card .a{font-size:13px;color:var(--gray)}
   .nav-card .go{display:inline-block;margin-top:10px;font-size:13px;color:var(--pink);font-weight:700}
+  .comparison-wrap{overflow-x:auto;margin-top:20px;border-radius:var(--radius);box-shadow:0 2px 10px rgba(58,53,80,.06)}
+  .comparison{width:100%;min-width:620px;border-collapse:collapse;background:#fff;font-size:12px}
+  .comparison th,.comparison td{padding:11px 12px;border-bottom:1px solid var(--pink-mid);text-align:left;vertical-align:top}
+  .comparison th{background:var(--pink-soft);color:var(--navy);font-weight:700}
+  .comparison tr:last-child td{border-bottom:none}
+  .scroll-hint{display:none;font-size:11px;color:var(--gray);text-align:right;margin-top:6px}
+  @media(max-width:640px){.scroll-hint{display:block}}
 
   /* cards & boxes */
   .card{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(58,53,80,.06)}
@@ -48,6 +57,7 @@
   .big-num small{font-size:13px;font-weight:600;color:var(--navy)}
   .note{font-size:12px;color:var(--gray);margin-top:6px}
   .tbd{display:inline-block;font-size:11px;background:#eee9f2;color:#8a7fa8;border-radius:999px;padding:1px 8px;vertical-align:middle;font-weight:600}
+  .ownership-note{background:var(--pink-soft);border-left:4px solid var(--pink);border-radius:8px;padding:10px 12px;margin:10px 0 16px;font-size:13px;font-weight:700}
 
   .warn-box{background:var(--warn-bg);border:1.5px solid var(--warn);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px}
   .warn-box .t{color:var(--warn);font-weight:800;font-size:14px;margin-bottom:6px}
@@ -104,7 +114,11 @@
     <h1>制服のルールが<br>新しくなりました</h1>
     <p>あなたに合った制服の持ち方、見つけてね。</p>
     <div class="notice">
-      <strong>大切なお知らせ：</strong>制服の<strong>貸し借りは全面禁止</strong>になりました。自分の制服は自分だけのもの。みんなが気持ちよく働けるように、守ってください。
+      <strong>大切なお知らせ：</strong>制服の<strong>貸し借りは全面禁止</strong>になりました。専用登録された制服は、登録された本人だけが着用できます。みんなが気持ちよく働けるように、守ってください。
+    </div>
+    <div class="meta">
+      <span>適用開始日：決まり次第お知らせ</span>
+      <span>最終更新日：2026年7月21日</span>
     </div>
   </div>
 </div>
@@ -113,19 +127,31 @@
 <section>
   <div class="wrap">
     <h2>あなたはどっちのタイプ?</h2>
-    <p class="lead">2つの制度は目的がぜんぜん違うもの。自分の気持ちに近いほうを見てみてね。</p>
+    <p class="lead">2つの制度は、目的・費用・条件が異なります。自分の希望に合う制度を確認してください。</p>
     <div class="nav-cards">
       <a class="nav-card" href="#senyou">
         <div class="q">「自分だけが着る制服がいい」</div>
-        <div class="a">みんなで一緒に使う制服はちょっと苦手…という子へ。今ある制服を、あなた専用にできます。</div>
+        <div class="a">既存デザインをもとに新しく制作し、本人専用として着用できます。</div>
         <span class="go">→ マイ制服買取を見る</span>
       </a>
       <a class="nav-card" href="#original">
         <div class="q">「自分でデザインした制服を作りたい」</div>
-        <div class="a">自分の「好き」をかたちにしたい子へ。がんばりが条件をクリアしたら、世界に一着の制服を作ってもらえます。</div>
+        <div class="a">条件を満たすと、希望をもとにデザイナーと新しい制服を制作できます。</div>
         <span class="go">→ オリジナル制服を見る</span>
       </a>
     </div>
+    <div class="comparison-wrap" aria-label="制服制度の比較">
+      <table class="comparison">
+        <thead>
+          <tr><th>制度</th><th>目的</th><th>費用・予算</th><th>所有者</th><th>主な条件</th><th>受け取りまで</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>マイ制服買取</strong></td><td>既存デザインを新規制作し、本人専用で着用</td><td>予定価格12〜13万円</td><td>店舗</td><td>申込・入金</td><td>3〜6か月</td></tr>
+          <tr><td><strong>オリジナル制服</strong></td><td>希望をもとに新しいデザインを制作</td><td>税込10万円以内を運営が負担</td><td>完成後2年間は店舗</td><td>売上・出勤等の条件達成</td><td>打ち合わせ後に案内</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="scroll-hint">← 表は横にスクロールできます →</p>
   </div>
 </section>
 
@@ -135,21 +161,23 @@
 <section id="senyou">
   <div class="wrap">
     <h2>マイ制服買取 <span class="tag">買って自分専用に</span></h2>
-    <p class="lead">今ある制服を「自分専用」にできる制度です。買ったあとは、その制服を着るのはあなただけ。</p>
+    <p class="ownership-note">代金をお支払いいただいた後も、制服の所有者は店舗のままです。</p>
+    <p class="lead">既存デザインをもとに制服を新しく制作し、本人専用として着用できる制度です。</p>
 
     <div class="card">
       <h3>どういう制度?</h3>
-      <p>制服そのものは<strong>お店のもの</strong>のままですが、お金を払うことで<strong>「着られるのはあなただけ」</strong>になります。ほかの子に貸したり、借りたりはできません。</p>
+      <p>新しく制作した制服の所有者は<strong>店舗</strong>のままですが、申込者だけが着用できます。ほかのキャストに貸したり、ほかのキャストから借りたりはできません。</p>
       <div class="ownership">
-        <div><div class="who">制服の持ち主</div><div class="what">お店</div></div>
-        <div><div class="who">着られるのは</div><div class="what">あなただけ</div></div>
+        <div><div class="who">制服の所有者</div><div class="what">店舗</div></div>
+        <div><div class="who">着用できる人</div><div class="what">申込者本人</div></div>
       </div>
       <p class="note">「自分のものになる」ではなく「自分だけが使えるようになる」イメージです。</p>
     </div>
 
     <div class="card">
       <h3>金額・支払い方法</h3>
-      <p><span class="big-num">12〜13<small>万円くらい</small></span> <span class="tbd">※金額は決まり次第お知らせ</span></p>
+      <p><span class="big-num">12〜13<small>万円（予定価格）</small></span></p>
+      <p class="note">正式価格は、申込受付開始時に掲載します。</p>
       <ul>
         <li>支払いは<strong>会社の口座にお振込み</strong></li>
       </ul>
@@ -157,17 +185,17 @@
 
     <div class="warn-box">
       <div class="t">⚠ 申し込む前にチェック!</div>
-      <p>・できあがるまで<strong>3〜6ヶ月</strong>かかります<br>
+      <p>・新規制作のため、受け取りまで<strong>3〜6か月</strong>かかります<br>
       ・申し込んだあとの<strong>キャンセル・返金はできません</strong></p>
     </div>
 
     <div class="card">
       <h3>申し込みの流れ</h3>
       <ol class="steps">
-        <li>どの制服が対象か確認する <span class="tbd">※対象は決まり次第お知らせ</span></li>
+        <li>対象となる制服デザインを確認する <span class="tbd">※対象は決まり次第お知らせ</span></li>
         <li>申し込みフォームから申し込む <span class="tbd">※フォーム準備中</span></li>
         <li>会社の口座にお振込み</li>
-        <li>できあがったらお渡し（3〜6ヶ月）</li>
+        <li>新しく制作した制服を受け取る（3〜6か月）</li>
       </ol>
     </div>
   </div>
@@ -178,8 +206,8 @@
 <!-- ④ オリジナル制服 -->
 <section id="original">
   <div class="wrap">
-    <h2>オリジナル制服 <span class="tag gold">がんばって作る</span></h2>
-    <p class="lead">世界に一着、自分がデザインした制服を作れる制度です。条件をクリアすると、<strong>10万円（税込）</strong>の予算で新しいデザインの制服を作ってもらえます（1年に1着まで）。</p>
+    <h2>オリジナル制服 <span class="tag gold">条件達成で制作</span></h2>
+    <p class="lead">条件を満たすと、希望をもとにデザイナーとオリジナル制服を制作できる制度です。予算は<strong>10万円（税込）</strong>で、1年に1着までです。</p>
 
     <div class="card gold">
       <h3>クリアする条件</h3>
@@ -189,22 +217,22 @@
       </div>
       <div class="tab-panel active" id="tab-cast">
         <div class="cond"><span>売上</span><b>月150万円</b></div>
-        <div class="cond"><span>期間</span><b>3ヶ月連続で達成</b></div>
-        <div class="cond"><span>出勤</span><b>この3ヶ月で30日以上</b></div>
-        <p class="note">※ブランドアンバサダーの子も同じ条件です ／ リクエスト出勤は出勤日数に数えません</p>
+        <div class="cond"><span>期間</span><b>3か月連続で達成</b></div>
+        <div class="cond"><span>出勤</span><b>この3か月で30日以上</b></div>
+        <p class="note">※ブランドアンバサダーも同じ条件です ／ リクエスト出勤は出勤日数に数えません</p>
       </div>
       <div class="tab-panel" id="tab-km">
         <div class="cond"><span>売上</span><b>月100万円</b></div>
-        <div class="cond"><span>期間</span><b>3ヶ月で3回達成</b></div>
-        <div class="cond"><span>店責</span><b>この期間に10日以上</b></div>
-        <p class="note">※あとから取り消しになった店責は数えません</p>
+        <div class="cond"><span>期間</span><b>3か月の判定期間中、月100万円を3回達成</b></div>
+        <div class="cond"><span>店舗責任者（店責）勤務</span><b>期間中10日以上</b></div>
+        <p class="note">※後から取り消しになった店舗責任者（店責）勤務は数えません</p>
       </div>
-      <p class="note">※売上は、サービス料や手数料を引いたあとの金額（売上小計）で数えます<br>※予算10万円のなかなら、ヘッドドレスなどのパーツ購入もOK<br>※長期休暇などで期間が途切れちゃいそうなときは、相談してください</p>
+      <p class="note">※売上は、サービス料や手数料を引いたあとの金額（売上小計）で数えます<br>※予算10万円の範囲内なら、ヘッドドレスなどのパーツも購入できます<br>※長期休暇などで判定期間の継続が難しい場合は、運営へ相談してください</p>
     </div>
 
     <div class="card gold">
-      <h3>権利がなくなってしまうケース</h3>
-      <p class="note" style="margin-bottom:10px">条件をクリアしても、こういう場合は作れなくなってしまうので気をつけてね。</p>
+      <h3>オリジナル制服の制作資格を失う場合</h3>
+      <p class="note" style="margin-bottom:10px">条件を満たしても、次の場合は制作できません。</p>
       <details>
         <summary>勤怠のこと</summary>
         <div class="body"><ul><li>期間中に当欠3回、または遅刻5回以上</li></ul></div>
@@ -212,8 +240,8 @@
       <details>
         <summary>在籍のこと</summary>
         <div class="body"><ul>
-          <li>達成したあと60日以内に、お店を辞めたり長期休暇に入ったりした場合</li>
-          <li>契約違反や、犯罪・会社に損害を与える行為があったと認められた場合</li>
+          <li>達成後60日以内に退店した場合、または長期休暇に入った場合</li>
+          <li>契約違反、犯罪行為、運営または店舗に損害を与える行為があったと認められた場合</li>
         </ul></div>
       </details>
       <details>
@@ -223,18 +251,18 @@
       <details>
         <summary>ルールのこと</summary>
         <div class="body"><ul>
-          <li>イントラ「オリジナル制服申請」にあるルールを守らなかった場合</li>
+          <li>「オリジナル制服申請ルール」に定める事項を守らなかった場合</li>
           <li>お客様への声かけやDMで、高額商品をあおるような案内をした場合（法律で禁止されています）</li>
-          <li>店責の指示にしたがわず、ほかの子の売上を取るなどのズルをした場合</li>
-        </ul></div>
+          <li>店舗責任者（店責）の指示に従わず、他のキャストの売上を自分の売上として計上するなどの不正行為があった場合</li>
+        </ul><p class="note">※申請ルールは、フォーム公開時にイントラへ掲載します。</p></div>
       </details>
     </div>
 
     <div class="card gold">
       <h3>知っておいてほしいこと</h3>
       <ul>
-        <li><strong>制服はだれのもの?</strong>　税金のルールの関係で、できあがってから2年間はお店のものになります。2年たったら、希望すれば相談のうえで自分のものにできます</li>
-        <li><strong>デザインの権利</strong>　デザインの権利（著作権）は会社にあります。お店のお仕事・公式の活動以外で勝手に使うことはできません</li>
+        <li><strong>制服の所有者</strong>　完成後2年間の所有者は店舗です。2年経過後に所有権の移転を希望する場合は、運営へ相談してください</li>
+        <li><strong>デザインの権利</strong>　デザインの権利（著作権）は会社にあります。店舗での業務・公式活動以外で無断使用することはできません</li>
         <li><strong>お直しの費用</strong>　最初に作るとき以外のお直し（体型が変わったときの直しや、ふだん使いでの修理など）は自己負担です</li>
       </ul>
     </div>
@@ -242,7 +270,7 @@
     <div class="card gold">
       <h3>申請の流れ</h3>
       <ol class="steps">
-        <li>お店のキャストマネージャーにOKをもらう</li>
+        <li>所属店舗のキャストマネージャーから事前承認をもらう</li>
         <li>イントラ「オリジナル制服申請」から申請（チャレンジ期間が始まる<strong>7日前まで</strong>）</li>
         <li>条件クリアしたら、デザイナーさんとデザインの打ち合わせ</li>
         <li>制作してもらって、お渡し</li>
@@ -259,7 +287,7 @@
     <h2>2つの制度に共通のルール</h2>
     <div class="card">
       <h3>貸し借りは禁止</h3>
-      <p>どちらの制服も、<strong>ほかの子との貸し借りはできません</strong>。トラブルを防ぐためなので、必ず守ってね。</p>
+      <p>どちらの制服も、<strong>他のキャストとの貸し借りはできません</strong>。トラブル防止のため、必ず守ってください。</p>
     </div>
     <div class="card">
       <h3>保管のしかた</h3>
@@ -286,8 +314,8 @@
       <div class="body"><p>新しいルールへの切り替え方法を準備中です。<span class="tbd">※決まり次第お知らせ</span></p></div>
     </details>
     <details>
-      <summary>お店を辞めたら制服はどうなる?</summary>
-      <div class="body"><p>オリジナル制服は、できあがってから2年間はお店のものなので、原則お渡しできません（2年たてば相談のうえで可能）。マイ制服買取の場合は確認中です。<span class="tbd">※決まり次第お知らせ</span></p></div>
+      <summary>退店したら制服はどうなる?</summary>
+      <div class="body"><p>オリジナル制服は、完成後2年間は店舗所有のため、原則として本人へお渡しできません。2年経過後は、運営との相談により所有権を移転できる場合があります。マイ制服買取の退店時の扱いは確認中です。<span class="tbd">※決まり次第お知らせ</span></p></div>
     </details>
     <details>
       <summary>サイズが変わったら直してもらえる?</summary>
@@ -298,7 +326,7 @@
 
 <footer>
   <div class="wrap">
-    わからないことがあったら、お店のキャストマネージャーか運営に気軽に聞いてね。<br>
+    不明な点は、所属店舗のキャストマネージャーまたは運営へ確認してください。<br>
     「※決まり次第お知らせ」の項目は、決まったらこのページを更新します。
   </div>
 </footer>
