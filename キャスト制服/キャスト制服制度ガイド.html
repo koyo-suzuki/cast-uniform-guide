@@ -38,13 +38,11 @@
   .nav-card .q{font-size:15px;font-weight:700;margin-bottom:6px}
   .nav-card .a{font-size:13px;color:var(--gray)}
   .nav-card .go{display:inline-block;margin-top:10px;font-size:13px;color:var(--pink);font-weight:700}
-  .comparison-wrap{overflow-x:auto;margin-top:20px;border-radius:var(--radius);box-shadow:0 2px 10px rgba(58,53,80,.06)}
+  .comparison-wrap{margin-top:20px;border-radius:var(--radius);box-shadow:0 2px 10px rgba(58,53,80,.06)}
   .comparison{width:100%;min-width:620px;border-collapse:collapse;background:#fff;font-size:12px}
   .comparison th,.comparison td{padding:11px 12px;border-bottom:1px solid var(--pink-mid);text-align:left;vertical-align:top}
   .comparison th{background:var(--pink-soft);color:var(--navy);font-weight:700}
   .comparison tr:last-child td{border-bottom:none}
-  .scroll-hint{display:none;font-size:11px;color:var(--gray);text-align:right;margin-top:6px}
-  @media(max-width:640px){.scroll-hint{display:block}}
 
   /* cards & boxes */
   .card{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(58,53,80,.06)}
@@ -103,6 +101,30 @@
 
   .divider{border:none;border-top:1.5px solid var(--pink-mid);margin:0}
   footer{padding:32px 0 24px;text-align:center;font-size:12px;color:var(--gray)}
+
+  @media(max-width:640px){
+    body{padding-bottom:88px}
+    .wrap{padding:0 16px}
+    .hero{padding:34px 0 26px}
+    .hero h1{font-size:24px}
+    section{padding:30px 0}
+    h2{font-size:19px;align-items:flex-start;flex-wrap:wrap;line-height:1.5}
+    h2 .tag{margin-top:3px}
+    .nav-card,.card{padding:18px}
+    .comparison-wrap{background:transparent;box-shadow:none}
+    .comparison{display:block;min-width:0;background:transparent}
+    .comparison thead{display:none}
+    .comparison tbody,.comparison tr{display:block}
+    .comparison tr{background:#fff;border:1px solid var(--pink-mid);border-radius:14px;padding:12px 16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(58,53,80,.05)}
+    .comparison td,.comparison tr:last-child td{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;padding:7px 0;border:0;border-bottom:1px dashed var(--pink-mid);font-size:13px}
+    .comparison td:last-child{border-bottom:0}
+    .comparison td::before{content:attr(data-label);color:var(--gray);font-size:11px;font-weight:700}
+    .cond{align-items:flex-start;gap:12px}
+    .cond span{min-width:72px}
+    .cond b{max-width:66%;font-size:14px;line-height:1.5;text-align:right}
+    .cta-bar{padding:10px 12px;gap:8px}
+    .cta-bar a{font-size:12px;padding:12px 5px}
+  }
 </style>
 </head>
 <body>
@@ -146,12 +168,11 @@
           <tr><th>制度</th><th>目的</th><th>費用・予算</th><th>所有者</th><th>主な条件</th><th>受け取りまで</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>マイ制服買取</strong></td><td>既存デザインを新規制作し、本人専用で着用</td><td>予定価格12〜13万円</td><td>店舗</td><td>申込・入金</td><td>3〜6か月</td></tr>
-          <tr><td><strong>オリジナル制服</strong></td><td>希望をもとに新しいデザインを制作</td><td>税込10万円以内を運営が負担</td><td>完成後2年間は店舗</td><td>売上・出勤等の条件達成</td><td>打ち合わせ後に案内</td></tr>
+          <tr><td data-label="制度"><strong>マイ制服買取</strong></td><td data-label="目的">既存デザインを新規制作し、本人専用で着用</td><td data-label="費用・予算">予定価格12〜13万円</td><td data-label="所有者">店舗</td><td data-label="主な条件">申込・入金</td><td data-label="受け取りまで">3〜6か月</td></tr>
+          <tr><td data-label="制度"><strong>オリジナル制服</strong></td><td data-label="目的">希望をもとに新しいデザインを制作</td><td data-label="費用・予算">税込10万円以内を運営が負担</td><td data-label="所有者">完成後2年間は店舗</td><td data-label="主な条件">売上・出勤等の条件達成</td><td data-label="受け取りまで">打ち合わせ後に案内</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="scroll-hint">← 表は横にスクロールできます →</p>
   </div>
 </section>
 
@@ -224,8 +245,8 @@
       <div class="tab-panel" id="tab-km">
         <div class="cond"><span>売上</span><b>月100万円</b></div>
         <div class="cond"><span>期間</span><b>3か月の判定期間中、月100万円を3回達成</b></div>
-        <div class="cond"><span>店舗責任者（店責）勤務</span><b>期間中10日以上</b></div>
-        <p class="note">※後から取り消しになった店舗責任者（店責）勤務は数えません</p>
+        <div class="cond"><span>店責</span><b>期間中10日以上</b></div>
+        <p class="note">※後から取り消しになった店責勤務は数えません</p>
       </div>
       <p class="note">※売上は、サービス料や手数料を引いたあとの金額（売上小計）で数えます<br>※予算10万円の範囲内なら、ヘッドドレスなどのパーツも購入できます<br>※長期休暇などで判定期間の継続が難しい場合は、運営へ相談してください</p>
     </div>
@@ -253,7 +274,7 @@
         <div class="body"><ul>
           <li>「オリジナル制服申請ルール」に定める事項を守らなかった場合</li>
           <li>お客様への声かけやDMで、高額商品をあおるような案内をした場合（法律で禁止されています）</li>
-          <li>店舗責任者（店責）の指示に従わず、他のキャストの売上を自分の売上として計上するなどの不正行為があった場合</li>
+          <li>店責の指示に従わず、他のキャストの売上を自分の売上として計上するなどの不正行為があった場合</li>
         </ul><p class="note">※申請ルールは、フォーム公開時にイントラへ掲載します。</p></div>
       </details>
     </div>
@@ -311,7 +332,7 @@
     </details>
     <details>
       <summary>いま「専用制服」を持ってるんだけど、どうなる?</summary>
-      <div class="body"><p>新しいルールへの切り替え方法を準備中です。<span class="tbd">※決まり次第お知らせ</span></p></div>
+      <div class="body"><p>これまで「専用制服」と呼んでいた制服は、名称が<strong>「オリジナル制服」</strong>に変わりました。すでに専用制服を持っている方も、今後は「オリジナル制服」として案内します。</p></div>
     </details>
     <details>
       <summary>退店したら制服はどうなる?</summary>
